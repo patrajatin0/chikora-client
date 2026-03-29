@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     async function fetchdata() {
       try {
-        const data = await fetch("https://chikora-server.onrender.com/api/product")
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/api/product`)
         const json = await data.json()
         console.log(json.map((c) => (c.productName)));
         setData(json)
